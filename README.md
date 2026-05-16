@@ -15,9 +15,9 @@ ObfusGuard analyzes Windows PE files (EXE, DLL) and returns a structured verdict
 
 Your EDR flagged a file. Now what?
 
-Before you can escalate, detonate, or dismiss — you need to know what you're looking at. Most static analysis tools return a score or a signature match. ObfusGuard returns a **verdict with reasoning**: what signals fired, why they matter, and what the file structure tells you about its intent.
+Before you can escalate, detonate, or dismiss, you need to know what you're looking at. Most static analysis tools return a score or a signature match. ObfusGuard returns a **verdict with reasoning**: what signals fired, why they matter, and what the file structure tells you about its intent.
 
-That's the triage gap ObfusGuard fills — the moment between detection and decision.
+That's the triage gap ObfusGuard fills. The moment between detection and decision.
 
 ---
 
@@ -117,7 +117,8 @@ That's the triage gap ObfusGuard fills — the moment between detection and deci
 
 ---
 
-Same surface signals — installer layout, IOCs, anomalies — but ObfusGuard correctly separates them. The QBot dropper hits HIGH on YARA-confirmed shellcode patterns and suspicious overlay. The Spotify installer stays LOW on publisher trust, signature verification, and benign ML mass.
+Same surface signals, installer layout, IOCs, anomalies, but ObfusGuard correctly separates them. The QBot dropper hits HIGH on YARA-confirmed shellcode patterns and suspicious overlay. 
+The Spotify installer stays LOW on publisher trust, signature verification, and benign ML mass.
 
 ---
 
@@ -129,7 +130,7 @@ ObfusGuard fuses five independent analysis layers into a single verdict:
 Per-section and sliding-window entropy analysis. Detects packed regions, high-entropy overlays, and byte distribution anomalies using chi-squared statistics and z-score outlier detection.
 
 **2. ML Byte Distribution Classifier**  
-Classifies files into: `Benign / Compressed / Encrypted / Obfuscated / Packed / Unknown`. Trained on a large corpus of known samples. ML output is one signal among many — it can be overridden by stronger structural evidence.
+Classifies files into: `Benign / Compressed / Encrypted / Obfuscated / Packed / Unknown`. Trained on a large corpus of known samples. ML output is one signal among many and it can be overridden by stronger structural evidence.
 
 **3. YARA Engine**  
 122 rules across 19 rule files covering shellcode patterns, packer signatures, dropper behavior, network IOCs, anti-debug techniques, and MITRE ATT&CK-mapped threat families. All rules include PE/ELF magic guards to prevent false fires on non-PE content.
@@ -148,7 +149,7 @@ A sequential scoring engine that fuses all signals with weighted mutation rules,
 
 **No cloud dependency.** Deployed as an on-premises Docker image. Files never leave your environment. Suitable for air-gapped deployments, regulated industries, and privacy-sensitive workflows.
 
-**Explainable verdicts.** Every verdict includes the signals that fired, the YARA rules matched, the ML classification, and the scoring trace. Analysts understand not just the conclusion — but the evidence behind it.
+**Explainable verdicts.** Every verdict includes the signals that fired, the YARA rules matched, the ML classification, and the scoring trace. Analysts understand not just the conclusion, but the evidence behind it.
 
 **Verdict over score.** ObfusGuard doesn't return a raw number and leave interpretation to the analyst. It returns a verdict label (`HIGH / MEDIUM / LOW`), a threat class (`Likely Loader / Dropper`, `Legitimate Installer`, etc.), and a human-readable reason. The score is supporting evidence.
 
@@ -212,7 +213,7 @@ Benchmark methodology: single-pass analysis on a curated corpus of known-label s
 
 ## Known limitations
 
-ObfusGuard is optimized for Windows PE files (EXE, DLL). It does not analyze scripts, documents, or non-PE formats. It does not perform dynamic analysis or behavioral detection. Zero-signal samples — files with no structural indicators — present a natural ceiling for any static-only engine. Files requiring unpacking for meaningful signal extraction may produce lower-confidence verdicts without the unpacking step.
+ObfusGuard is optimized for Windows PE files (EXE, DLL). It does not analyze scripts, documents, or non-PE formats. It does not perform dynamic analysis or behavioral detection. Zero-signal samples, files with no structural indicators, present a natural ceiling for any static-only engine. Files requiring unpacking for meaningful signal extraction may produce lower-confidence verdicts without the unpacking step.
 
 These are not bugs. They are honest constraints of static-only analysis, and knowing them helps analysts use ObfusGuard appropriately.
 
