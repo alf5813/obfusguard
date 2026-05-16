@@ -191,7 +191,7 @@ curl -X POST "https://www.obfusguard.com/api/analyze" \
 | `ml_scores` | Per-class ML probability breakdown |
 | `duration_ms` | Analysis time in milliseconds |
 
-Request a trial API key at [obfusguard.com](https://www.obfusguard.com).
+Request a trial API key at support@obfusguard.com
 
 ---
 
