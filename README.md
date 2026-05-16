@@ -164,8 +164,6 @@ docker pull obfusguard/engine
 docker run -p 8080:8080 obfusguard/engine
 ```
 
-Full deployment documentation available at [obfusguard.com](https://www.obfusguard.com).
-
 ---
 
 ## API
