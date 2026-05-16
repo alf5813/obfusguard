@@ -1,6 +1,6 @@
 # ObfusGuard
 
-**Static PE malware analysis engine — explainable verdicts without execution.**
+**Static PE malware analysis engine and explainable verdicts without execution.**
 
 ObfusGuard analyzes Windows PE files (EXE, DLL) and returns a structured verdict fusing entropy mapping, ML-based byte distribution classification, packer detection, YARA-based IOC enrichment, and a rule-based scoring engine. No execution. No sandbox. No file leaves your environment.
 
