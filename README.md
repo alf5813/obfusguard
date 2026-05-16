@@ -74,6 +74,8 @@ That's the triage gap ObfusGuard fills — the moment between detection and deci
 }
 ```
 
+![QBot Dropper — HIGH RISK verdict](qbot_verdict.png)
+
 ---
 
 ### Benign — SpotifySetup.exe
@@ -111,6 +113,9 @@ That's the triage gap ObfusGuard fills — the moment between detection and deci
   "duration_ms": 24331
 }
 ```
+![SpotifySetup — LOW RISK verdict](benign_verdict.png)
+
+---
 
 Same surface signals — installer layout, IOCs, anomalies — but ObfusGuard correctly separates them. The QBot dropper hits HIGH on YARA-confirmed shellcode patterns and suspicious overlay. The Spotify installer stays LOW on publisher trust, signature verification, and benign ML mass.
 
