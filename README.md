@@ -4,7 +4,7 @@
 
 ObfusGuard analyzes Windows PE files (EXE, DLL) and returns a structured verdict fusing entropy mapping, ML-based byte distribution classification, packer detection, YARA-based IOC enrichment, and a rule-based scoring engine. No execution. No sandbox. No file leaves your environment.
 
-**96% detection accuracy** across a 1150-file validated corpus spanning ransomware, RATs, stealers, droppers, and packed malware.
+**97% detection accuracy** across a 1150-file validated corpus spanning ransomware, RATs, stealers, droppers, and packed malware.
 
 → **Live demo:** [obfusguard.com](https://www.obfusguard.com)  
 → **API access:** Request a key via support@obfusguard.com
