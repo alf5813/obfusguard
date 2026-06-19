@@ -203,7 +203,7 @@ Request a trial API key at support@obfusguard.com
 | Droppers | High |
 | Packed malware | High |
 | Benign installers | High |
-| **Overall** | **96% across 1150 files** |
+| **Overall** | **97% across 1150 files** |
 
 Benchmark methodology: single-pass analysis on a curated corpus of known-label samples. No sample was used in training. Results reflect production engine performance as of May 2026.
 
